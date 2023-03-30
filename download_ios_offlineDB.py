@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 # @Time    : 2022/5/9 下午5:36
 # @Author  : Laura
 # @File    : download_ios_offlineDB.py
@@ -114,7 +114,7 @@ def DB_donwload_and_upload_to_googledrive(client,folderid,env=None):
 
         # extracting the zip file contents
         db_zipfile = zipfile.ZipFile(io.BytesIO(req.content))
-        db_unzip = db_zipfile.extractall(path="/", pwd=unzip_pwd.encode())
+        db_unzip = db_zipfile.extractall(path="./", pwd=unzip_pwd.encode())
         file_name=x+"_v"+db_version+".wcdb"
         print(file_name)
 
