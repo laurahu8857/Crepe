@@ -181,8 +181,8 @@ def send_message_to_slack(envDB,mention=None,result=None):
 
 
 if __name__ == "__main__":
-    # Flower
-    # send_message_to_slack(envDB="testing",mention="<@U1N23F4PQ>",result="fail")
     # prod,staging,testing
-    get_offline_db_metadata(env='testing')
+    if len(sys.argv) <2:
+        print('no argument[env]\n Please enter pro/staging/testing.')
+    get_offline_db_metadata(env=sys.argv[1])
 
