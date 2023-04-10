@@ -162,14 +162,13 @@ def send_message_to_slack(envDB,mention=None,result=None):
     :return:None
     """
     # send message to slack channel qa-whoscall_app
-    s_url = 'https://hooks.slack.com/services/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'
+    s_url = 'https://hooks.slack.com/services/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'
 
     dict_headers = {'Content-type': 'application/json'}
 
-    message = "Hi "+mention+"\nWhoscall iOS "+envDB+" DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nhttps://imgur.com/K1VJQan.jpg"
-    # message = "Hi %s\nWhoscall iOS %s DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nhttps://imgur.com/K1VJQan.jpg"
+    message = f"Hi {mention}\nWhoscall iOS {envDB} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nhttps://imgur.com/K1VJQan.jpg"
     if result == "fail":
-        message = "Hi "+mention+"\nWhoscall iOS "+envDB+" DB is uploaded failed.\nPlease check it.\nhttps://memeprod.ap-south-1.linodeobjects.com/user-template/197cfd0c386bc60b694b984280f8259f.png"
+        message = f"Hi {mention}\nWhoscall iOS {envDB} DB is uploaded failed.\nPlease check it.\nhttps://memeprod.ap-south-1.linodeobjects.com/user-template/197cfd0c386bc60b694b984280f8259f.png"
 
     dict_payload = {
         "text": message}
