@@ -162,7 +162,7 @@ def send_message_to_slack(envDB,mention=None,result=None):
     :return:None
     """
     # send message to slack channel qa-whoscall_app
-    s_url = 'https://hooks.slack.com/services/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'
+    s_url = config.slack_webhook
 
     dict_headers = {'Content-type': 'application/json'}
 
