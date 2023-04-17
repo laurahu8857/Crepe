@@ -145,13 +145,13 @@ def DB_donwload_and_upload_to_googledrive(client,folderid,env=None):
         # env is None when testing the script
         if env is not None:
             # metion Cat
-            send_message_to_slack(mention=config.mentioner_ID, envDB=env)
+            send_message_to_slack(mention=config.mentioner_ID, envDB=env, google_drive=folderid)
     except:
         print("Unexpected error:", sys.exc_info()[0])
         # metion Laura
         send_message_to_slack(mention=config.owner_ID, envDB=env,result="fail")
 
-def send_message_to_slack(envDB,mention=None,result=None):
+def send_message_to_slack(envDB,mention=None,result=None, google_drive=None):
     """
     send result to slack
 
@@ -166,7 +166,7 @@ def send_message_to_slack(envDB,mention=None,result=None):
 
     dict_headers = {'Content-type': 'application/json'}
 
-    message = f"Hi {mention}\nWhoscall iOS {envDB} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nhttps://imgur.com/K1VJQan.jpg"
+    message = f"Hi {mention}\nWhoscall iOS {envDB} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nGoogle Drive link:https://drive.google.com/drive/folders/{google_drive}\nhttps://imgur.com/K1VJQan.jpg"
     if result == "fail":
         message = f"Hi {mention}\nWhoscall iOS {envDB} DB is uploaded failed.\nPlease check it.\nhttps://memeprod.ap-south-1.linodeobjects.com/user-template/197cfd0c386bc60b694b984280f8259f.png"
 
