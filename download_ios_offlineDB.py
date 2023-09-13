@@ -166,7 +166,7 @@ def send_message_to_slack(envDB,mention=None,result=None, google_drive=None):
 
     dict_headers = {'Content-type': 'application/json'}
 
-    message = f"Hi {mention}\nWhoscall iOS {envDB} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nGoogle Drive link:https://drive.google.com/drive/folders/{google_drive}\nhttps://imgur.com/0YOQXiw"
+    message = f"Hi {mention}\nWhoscall iOS {envDB} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nGoogle Drive link:https://drive.google.com/drive/folders/{google_drive}\nhttps://imgur.com/0YOQXiw.jpg"
     if result == "fail":
         message = f"Hi {mention}\nWhoscall iOS {envDB} DB is uploaded failed.\nPlease check it.\nhttps://memeprod.ap-south-1.linodeobjects.com/user-template/197cfd0c386bc60b694b984280f8259f.png"
 
