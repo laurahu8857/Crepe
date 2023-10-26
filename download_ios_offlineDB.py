@@ -165,10 +165,12 @@ def send_message_to_slack(envDB,mention=None,result=None, google_drive=None):
     s_url = config.slack_webhook
 
     dict_headers = {'Content-type': 'application/json'}
+    success_image = "https://i.imgur.com/7xH9GwQ.jpeg"
+    fail_image ="https://memeprod.ap-south-1.linodeobjects.com/user-template/197cfd0c386bc60b694b984280f8259f.png"
 
-    message = f"Hi {mention}\nWhoscall iOS {envDB} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nGoogle Drive link:https://drive.google.com/drive/folders/{google_drive}\nhttps://imgur.com/a/yI78QTa.jpg"
+    message = f"Hi {mention}\nWhoscall iOS {envDB} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nGoogle Drive link:https://drive.google.com/drive/folders/{google_drive}\n{success_image}"
     if result == "fail":
-        message = f"Hi {mention}\nWhoscall iOS {envDB} DB is uploaded failed.\nPlease check it.\nhttps://memeprod.ap-south-1.linodeobjects.com/user-template/197cfd0c386bc60b694b984280f8259f.png"
+        message = f"Hi {mention}\nWhoscall iOS {envDB} DB is uploaded failed.\nPlease check it.\n{fail_image}"
 
     dict_payload = {
         "text": message}
