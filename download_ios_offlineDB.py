@@ -168,9 +168,9 @@ def send_message_to_slack(envDB,mention=None,result=None, google_drive=None):
     success_image = "https://i.imgur.com/7xH9GwQ.jpeg"
     fail_image ="https://memeprod.ap-south-1.linodeobjects.com/user-template/197cfd0c386bc60b694b984280f8259f.png"
 
-    message = f"Hi {mention}\nWhoscall iOS {envDB} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nGoogle Drive link:https://drive.google.com/drive/folders/{google_drive}\n{success_image}"
+    message = "Hi {}\nWhoscall iOS {} DB is already uploaded to Google Drive.\nPlease update revolver key in Apple Notes.\nGoogle Drive link:https://drive.google.com/drive/folders/{}\n{}".format(mention,envDB,google_drive,success_image)
     if result == "fail":
-        message = f"Hi {mention}\nWhoscall iOS {envDB} DB is uploaded failed.\nPlease check it.\n{fail_image}"
+        message = "Hi {}\nWhoscall iOS {} DB is uploaded failed.\nPlease check it.\n{}".format(mention,envDB,fail_image)
 
     dict_payload = {
         "text": message}
