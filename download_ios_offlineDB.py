@@ -95,7 +95,7 @@ def DB_donwload_and_upload_to_googledrive(client,folderid,env=None):
         sub_folderid = sub_folder['id']
     except:
         print("Unexpected error:", sys.exc_info()[0])
-    region_list = ['TW', 'HK', 'JP', 'KR', 'BR', 'TH']
+    region_list = ['TW', 'HK', 'JP', 'KR', 'BR', 'TH','PH','MY']
     # region_list = ['HK']
     print(db.list_collection_names())
     dbkey_list ={}
